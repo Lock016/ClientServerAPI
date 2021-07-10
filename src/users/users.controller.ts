@@ -3,6 +3,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import { UserEntity } from './user.entity';
 import { UsersService } from './users.service';
 import { diskStorage } from 'multer';
+import { customName } from 'src/utils/customname';
 
 @Controller('users')
 export class UsersController {
@@ -31,7 +32,8 @@ export class UsersController {
     @UseInterceptors(
         FileInterceptor('image',{
             storage: diskStorage({
-                destination: './avatars'
+                destination: './avatars',
+                filename: customName
             })
         })
     ) 
