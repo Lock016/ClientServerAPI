@@ -5,6 +5,7 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
+import { ItemsModule } from './items/items.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { UsersModule } from './users/users.module';
     TypeOrmModule.forRoot(),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'avatars')
-    })
+    }),
+    ItemsModule
   ],
   controllers: [AppController],
   providers: [AppService],
