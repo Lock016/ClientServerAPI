@@ -6,6 +6,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { ItemsModule } from './items/items.module';
+import { SellersModule } from './sellers/sellers.module';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import { ItemsModule } from './items/items.module';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'avatars')
     }),
-    ItemsModule
+    ItemsModule,
+    SellersModule
   ],
   controllers: [AppController],
   providers: [AppService],
