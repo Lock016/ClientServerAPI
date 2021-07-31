@@ -12,8 +12,8 @@ export class ItemEntity {
     @Column({ length: 50 })
     description: string;
 
-    @Column()
-    price: number;
+    @Column({ length: 50 })
+    price: string;
 
     @Column({ length: 200 })
     image: string;
